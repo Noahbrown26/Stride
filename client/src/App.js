@@ -1,6 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Box } from '@mui/material';
+import ExerciseDetail from './pages/ExerciseDetail';
+import Home from './pages/Home';
+import Footer from './components/Footer';
 
 function App() {
   return (

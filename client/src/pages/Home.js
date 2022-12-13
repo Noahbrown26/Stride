@@ -11,6 +11,8 @@ const Home = () => {
 
   return (
     <h1>testing</h1>
+    
+    
 
     //<Box>
     //  <HeroBanner />
@@ -20,6 +22,16 @@ const Home = () => {
 
   );
 };
+
+function MyComponent() {
+  const myStyles = {
+    backgroundImage: "url(https://i.postimg.cc/1zc0BHNQ/Home-page-stride-01.jpg)",
+    height: "100vh",
+    backgroundSize: "cover"
+  };
+
+  return <div style={myStyles}>{/* content goes here */}</div>;
+}
 
 export default Home;
 

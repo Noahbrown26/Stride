@@ -11,13 +11,15 @@ const Home = () => {
 
   return (
     <h1>testing</h1>
+
+    //<Box>
+    //  <HeroBanner />
+      //<SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+      //<Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
+    //</Box>
+
   );
 };
 
 export default Home;
 
-//<Box>
-    //  <HeroBanner />
-      //<SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-      //<Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
-    //</Box>

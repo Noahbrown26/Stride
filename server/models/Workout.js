@@ -1,6 +1,7 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const workoutSchema = new Schema({
+const workoutSchema = new Schema(
+  {
   bodyPart: {
     type: String,
   },
@@ -10,10 +11,6 @@ const workoutSchema = new Schema({
   gifUrl: {
     type: String,
   },
-  id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
   },
@@ -22,4 +19,6 @@ const workoutSchema = new Schema({
   }
 });
 
-module.exports = workoutSchema;
+const Workout = model('Workout', workoutSchema);
+
+module.exports = Workout;

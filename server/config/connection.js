@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Noahb26:!26Christmas@stride.xtqj5t5.mongodb.net/test', {
+mongoose.connect(process.env.MONGODB_URI, {
 useNewUrlParser: true,
 useUnifiedTopology: true,
 useCreateIndex: true,
@@ -8,3 +9,5 @@ useFindAndModify: false,
 });
 
 module.exports = mongoose.connection;
+
+process.env.DB_PW

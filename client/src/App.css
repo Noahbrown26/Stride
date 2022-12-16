@@ -17,9 +17,7 @@
   
 }
 
-.login-form, .register-form {
-  background-color: white;
-}
+
 
 @media screen and (min-width: 600px) {
   .auth-form-container {
@@ -84,7 +82,8 @@ h2 {
 }
 
 .customnav {
-  background-color:rgb(77, 102, 245)
+  background-color:rgb(77, 102, 245);
+  padding: 1.5%;
 }
 
 .customBtn {
@@ -99,4 +98,21 @@ width: 20%;
 
 .workout-card{
   margin: 1rem;  
-  }
+}
+
+.modal-content {
+  background-color: white;
+  border: none;
+}
+
+.modal-header {
+  background-color: rgb(77, 102, 245);
+}
+
+.modal-header .link-item {
+  color: black;
+}
+
+.modal-header .link-item:hover {
+  color: white;
+}

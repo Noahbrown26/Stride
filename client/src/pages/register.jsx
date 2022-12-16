@@ -1,30 +1,107 @@
-import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'react-bootstrap';
 
-export default function Register(props) {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const [username, setName] = useState('');
+import { useMutation } from '@apollo/client'
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-    const history = useHistory();
+const SignupForm = () => {
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [validated] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(email);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const [addUser, {error,data}] = useMutation(ADD_USER);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
 
-    return (
-        <div className="auth-form-container">
-        <form className="register-form" onSubmit={handleSubmit}>
-        <h2>Register</h2>
-            <label htmlFor="name">Username</label>
-            <input value={username} name="username" id="usernamw" placeholder="username" />
-            <label htmlFor="email">email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-            <label htmlFor="password">password</label>
-            <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button type="submit" className="customBtn" onClick={() => history.push("/")}>Log In</button>
-        </form>
-    </div>
-    )
-}
+    try {
+      const {data}  = await addUser({
+        variables: { ...userFormData }
+      });
+      console.log(userFormData);
+      console.log(data);
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
+
+  return (
+    <>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          An error occured while trying to create your account.
+        </Alert>
+
+        <Form.Group>
+          <Form.Label htmlFor='username'>Username:</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='username'
+            name='username'
+            onChange={handleInputChange}
+            value={userFormData.username}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>A username is required</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='email'>Email:</Form.Label>
+          <Form.Control
+            type='email'
+            placeholder='email@email.com'
+            name='email'
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>A valid Email address is required</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='password'>Password:</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='**********'
+            name='password'
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+        </Form.Group>
+        <Button
+          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+          type='submit'
+          className="customBtn"
+          >
+          Submit
+        </Button>
+      </Form>
+    </>
+  );
+};
+
+export default SignupForm;

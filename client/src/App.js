@@ -8,6 +8,7 @@ import Home from './pages/Home';
 //import Footer from './components/Footer';
 import Login from './pages/login.jsx';
 import Register from './pages/register.jsx';
+import Workouts from './pages/workouts.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/Register' component={Register} />
+          <Route exact path='/Workouts' component={Workouts} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>

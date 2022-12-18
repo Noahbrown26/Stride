@@ -96,10 +96,6 @@ border-radius: 10px;
 width: 20%;
 }
 
-.workout-card{
-  margin: 1rem;  
-}
-
 .modal-content {
   background-color: white;
   border: none;
@@ -115,4 +111,16 @@ width: 20%;
 
 .modal-header .link-item:hover {
   color: white;
+}
+
+.workout-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.workout-card{
+  margin: 1.5rem; 
+  min-width: 20%; 
 }

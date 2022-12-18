@@ -8,7 +8,7 @@ const resolvers = {
   Query: {
 
     //query to get all available workouts from DB//
-    getWorkouts: async (parent, args) => {
+    Workouts: async (parent, args) => {
       const workoutData = await Workout.find({});
       return workoutData
     },

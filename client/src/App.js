@@ -6,10 +6,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 //import Footer from './components/Footer';
-import Login from './pages/login.jsx';
-import Register from './pages/register.jsx';
 import Workouts from './pages/workouts.jsx';
 
+//import apollo client library//
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,8 +17,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+// set graphql endpoint//
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {

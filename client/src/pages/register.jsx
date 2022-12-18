@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
+//import graphql mutations & auth utils //
 import { useMutation } from '@apollo/client'
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const SignupForm = () => {
+  //usestate for registration form//
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   const [validated] = useState(false);
-
+  //usestate for modal alert given an input errror//
   const [showAlert, setShowAlert] = useState(false);
-
+  //pass in mutation//
   const [addUser, {error,data}] = useMutation(ADD_USER);
-
+  //update form usestate on user input//
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
-
+// form handling function //
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    // check if form has everything (as per react-bootstrap docs)
+//check if form inputs are valid//
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();

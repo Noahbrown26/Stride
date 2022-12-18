@@ -24,7 +24,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getWorkouts: [Workout!]!
+    Workouts: [Workout!]!
     getMe: User
   }
 

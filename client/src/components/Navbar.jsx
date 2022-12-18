@@ -14,6 +14,8 @@ import Auth from '../utils/auth';
 
 export default function ButtonAppBar() {
 const history = useHistory();
+
+//usestate for login modal//
 const [showModal, setShowModal] = useState(false);
 
   return (
@@ -48,7 +50,7 @@ const [showModal, setShowModal] = useState(false);
                   <Button color="inherit" onClick={Auth.logout}>Logout</Button>
                 </>
               ) : (
-                <Button color="inherit" onClick={() => setShowModal(true)}>Login/Sign Up</Button>
+                <Button color="inherit" onClick={() => setShowModal(true)}>Login/SignUp</Button>
               )}
 
         {/* Bootstrap boilerplate model with useState passed in */}

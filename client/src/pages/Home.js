@@ -10,7 +10,11 @@ const Home = () => {
   //const [bodyPart, setBodyPart] = useState('all');
 
   return (
-    <h1>testing</h1>
+    <section className="hero-image">
+      <div>
+
+      </div>
+    </section>
     
     
 
@@ -22,16 +26,6 @@ const Home = () => {
 
   );
 };
-
-function MyComponent() {
-  const myStyles = {
-    backgroundImage: "url(https://i.postimg.cc/1zc0BHNQ/Home-page-stride-01.jpg)",
-    height: "100vh",
-    backgroundSize: "cover"
-  };
-
-  return <div style={myStyles}>{/* content goes here */}</div>;
-}
 
 export default Home;
 

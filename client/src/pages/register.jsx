@@ -13,7 +13,7 @@ const SignupForm = () => {
   //usestate for modal alert given an input errror//
   const [showAlert, setShowAlert] = useState(false);
   //pass in mutation//
-  const [addUser, {error,data}] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
   //update form usestate on user input//
   const handleInputChange = (event) => {
     const { name, value } = event.target;

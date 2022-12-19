@@ -15,7 +15,7 @@ const history = useHistory();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" class="customnav">
+      <AppBar position="static" className="">
         <Toolbar>
           <IconButton
             size="large"

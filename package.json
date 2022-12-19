@@ -2,12 +2,14 @@
   "name": "fitnessblog",
   "version": "1.0.0",
   "description": "A fitness themed blog",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server/server.js",
-    "install": "cd server && npm install && cd ../client && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm run build"
+    "client": "cd client && npm start",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
   },
   "repository": {
     "type": "git",

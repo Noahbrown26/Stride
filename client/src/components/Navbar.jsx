@@ -47,10 +47,11 @@ const [showModal, setShowModal] = useState(false);
           {/* if logged in render logout button. else render login*/}
           {Auth.loggedIn() ? (
                 <>
+                  <Button color="inherit" onClick={() => history.push("/")}>My Account</Button>
                   <Button color="inherit" onClick={Auth.logout}>Logout</Button>
                 </>
               ) : (
-                <Button color="inherit" onClick={() => setShowModal(true)}>Login/SignUp</Button>
+                <Button color="inherit" onClick={() => setShowModal(true)}>Login</Button>
               )}
 
         {/* Bootstrap boilerplate model with useState passed in */}

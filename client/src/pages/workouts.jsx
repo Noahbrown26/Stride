@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 
 // import query for workout data //
 import { GET_WORKOUTS } from '../utils/queries';
+import Auth from '../utils/auth';
 
 export default function WorkoutCard() {
 
@@ -43,10 +44,14 @@ export default function WorkoutCard() {
           </Typography>
         </CardContent>
         <CardActions>
+
+        {Auth.loggedIn() && (
+  
           <Button size="small">Save</Button>
+
+          )}
         </CardActions>
         </Card>
-
         ))}
       </div>
     );

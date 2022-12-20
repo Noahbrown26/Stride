@@ -6,6 +6,9 @@ Stride is an application that utilizses a Graphql api for users to add and creat
 
 [View deployed HEROKU app here!](https://stride-1.herokuapp.com/)
 
+![](./client/src/imgs/screen1.PNG)
+![](./client/src/imgs/screen2.PNG)
+
 ## Technologies used
 - React
 - NodeJS

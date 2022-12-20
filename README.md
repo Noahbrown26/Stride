@@ -2,7 +2,7 @@
 
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-Stride is an application that utilizses a Graphql api for users to add and create workouts. The front end utilizes React with the MUI component library. The backend was built using Mongo Atlas for the Database and Express/Node to run the server. Apollo server was used to query and mutate data with GraphQL.
+Stride is an application that utilizses a GraphQL API for users to create, update, and remove workouts. The front end utilizes React with the MUI component library. The backend was built using Mongo Atlas for the Database and Express/Node to run the server. Apollo server was used to query and mutate data with GraphQL. JWT were used for user creation and authentication.
 
 [View deployed HEROKU app here!](https://stride-1.herokuapp.com/)
 

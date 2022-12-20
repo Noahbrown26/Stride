@@ -1,6 +1,5 @@
 import React from 'react';
 //import { Box } from '@mui/material';
-
 //import Exercises from '../components/Exercises';
 //import SearchExercises from '../components/SearchExercises';
 //import HeroBanner from '../components/HeroBanner';
@@ -8,7 +7,7 @@ import React from 'react';
 const Home = () => {
   //const [exercises, setExercises] = useState([]);
   //const [bodyPart, setBodyPart] = useState('all');
-
+  
   return (
     <section className="hero-image">
       <div className="container mx-auto flex px-10  md:flex-row flex-col items-center py-56">
@@ -30,7 +29,7 @@ const Home = () => {
                   login
                 </a>
                 <a
-                  href="https://www.canva.com/design/DAE3t-0XuL8/IeLnJjkQHB8wzT-F2vTtLQ/edit"
+                  href="#contact"
                   className="ml-4 inline-flex text-gray-400 border-gray-400 border-2 py-2 px-6 hover:text-white hover:bg-gray-600 hover:border-gray-600 rounded-full text-lg">
                   sign up
                 </a>

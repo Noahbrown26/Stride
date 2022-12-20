@@ -10,4 +10,3 @@ useFindAndModify: false,
 
 module.exports = mongoose.connection;
 
-process.env.DB_PW
